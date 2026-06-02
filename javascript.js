@@ -19,3 +19,10 @@ const getHumanChoice = function(){
     }
 
 };
+// Create a variable named humanScore  and set it to zero
+let humanScore = 0;
+// Create a variable named computerScore and set it to zero
+let computerScore = 0;
+
+
+
