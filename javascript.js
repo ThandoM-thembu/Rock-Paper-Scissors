@@ -17,15 +17,21 @@ const getHumanChoice = function(){
     }
 
 };
-// Create a variable named humanScore  and set it to zero
-let humanScore = 0;
-// Create a variable named computerScore and set it to zero
-let computerScore = 0;
+
 
 //Create a function with two arguments, humanChoice and computerChoice
-const playRound = function (humanChoice, computerChoice){
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection)
+
+//Create a function named playGame
+const playGame = function(){
+    // Move playRound function and score variables so that they're declared inside of the new playGame function. This way, the scores will reset every time the playGame function is called.
+    const playRound = function (humanChoice, computerChoice){
     // The humanChoice argument must be case-insensitive
-    humanChoice = humanChoice.toLowerCase();
+        humanChoice = humanChoice.toLowerCase();
     // The console.log must display a string value representing the round winner, such as: 'You lose! paper bears Rock"
     //Increment the humanScore or computerScore variable based on the round winner 
     if (humanChoice === computerChoice){
@@ -36,7 +42,16 @@ const playRound = function (humanChoice, computerChoice){
     } else if (humanChoice === "paper" && computerChoice === "rock"){
         humanScore++;
         return "You win! Paper beats rock";
-    }
-
+    } else if (humanChoice === "scissors" && computerChoice === "paper"){
+        humanScore++;
+        return "You win! Scissors beats paper";
+    } else {
+        computerScore++;
+        return "You lose! " + computerChoice + " beats" + humanChoice;
+    }    
+    };
+    // Create a variable named humanScore  and set it to zero
+    let humanScore = 0;
+    // Create a variable named computerScore and set it to zero
+    let computerScore = 0;
 }
-
