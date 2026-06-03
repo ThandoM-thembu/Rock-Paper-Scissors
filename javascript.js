@@ -11,9 +11,7 @@ const getComputerChoice = function(){
 const getHumanChoice = function(){
     // Use the prompt method to get user's input
     const userInput = prompt("Please enter rock, paper, or scissors: ");
-    //Convert the user's input to lowercase to make it case-insensitive
-    return userInput.toLowerCase();
-    //User must type rock, paper, or scissors. If they type something else, we will return an error message.
+        //User must type rock, paper, or scissors. If they type something else, we will return an error message.
     if(userInput !== "rock" && userInput !== "paper" && userInput !== "scissors"){
         return "Invalid choice. Please enter rock, paper, or scissors.";
     }
@@ -24,5 +22,21 @@ let humanScore = 0;
 // Create a variable named computerScore and set it to zero
 let computerScore = 0;
 
+//Create a function with two arguments, humanChoice and computerChoice
+const playRound = function (humanChoice, computerChoice){
+    // The humanChoice argument must be case-insensitive
+    humanChoice = humanChoice.toLowerCase();
+    // The console.log must display a string value representing the round winner, such as: 'You lose! paper bears Rock"
+    //Increment the humanScore or computerScore variable based on the round winner 
+    if (humanChoice === computerChoice){
+        return "It's a tie! You both chose " + humanChoice;
+    } else if (humanChoice === "rock" && computerChoice === "scissors"){
+        humanScore++;
+        return "You win! Rock beats scissors";
+    } else if (humanChoice === "paper" && computerChoice === "rock"){
+        humanScore++;
+        return "You win! Paper beats rock";
+    }
 
+}
 
