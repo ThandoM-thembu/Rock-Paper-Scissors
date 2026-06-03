@@ -24,7 +24,7 @@ const getHumanChoice = function(){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-playRound(humanSelection, computerSelection)
+playRound(humanSelection, computerSelection);
 
 //Create a function named playGame
 const playGame = function(){
@@ -54,4 +54,10 @@ const playGame = function(){
     let humanScore = 0;
     // Create a variable named computerScore and set it to zero
     let computerScore = 0;
-}
+};
+    // Play five rounds calling playRound 5 times
+    for (let i = 0; i < 5; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        console.log(playRound(humanSelection, computerSelection))
+    }
