@@ -50,6 +50,14 @@ const playGame = function(){
         const computerSelection = getComputerChoice();
         console.log(playRound(humanSelection, computerSelection));
     }
+    // After five rounds, display the winner based on score.
+    if (humanScore > computerScore){
+        console.log("Congratulations! You win the game with a score of" + humanScore + "to" + computerScore);
+    } else if (computerScore > humanScore){
+        console.log("Sorry, you lose the game with a score of" + computerScore + "to" + humanScore);
+    } else {
+        console.log("The game is a tie with a score of" + humanScore + "to" + computerScore);
+    }
 };
 
   playGame();
